@@ -1,0 +1,9 @@
+@mixin media($size) {
+  @if $size == sm {
+    @media #{$breakpoint-sm} { @content; }
+  } @else if $size == md {
+    @media #{$breakpoint-md} { @content; }
+  } @else if $size == lg {
+    @media #{$breakpoint-lg} { @content; }
+  }
+}

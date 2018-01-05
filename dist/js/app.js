@@ -1,31 +1,50 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+//function to calculate age //
+var Age = exports.Age = function Age(month, day, year) {
+  _classCallCheck(this, Age);
+
+  this.month = month;
+  this.day = day;
+  this.year = year;
+};
+
+//function to calculate current time//
+
+
+var Human = exports.Human = function Human(ageYears, ageSeconds, lifeExpectancy, gender, dateOfBirth) {
+  _classCallCheck(this, Human);
+
+  this.ageYears = [];
+  this.ageSeconds = [];
+  this.lifeExpectancy = [];
+  this.gender = [];
+  this.dateOfBirth = [];
+};
+
+},{}],2:[function(require,module,exports){
 'use strict';
 
-var _interface = require('./../js/-interface.js');
+var _scripts = require('./../js/scripts.js');
 
 $(document).ready(function () {
   $('#inputted-dob').submit(function (event) {
     event.preventDefault();
-    var earthMonth = $('#inputted-birth-month').val();
-    var earthDay = $('#inputted-birth-day').val();
-    var earthYear = $('#inputted-birth-year').val();
-    var Human = new Human();
+    var earthMonth = parseInt($('#inputted-birth-month').val());
+    var earthDay = parseInt($('#inputted-birth-day').val());
+    var earthYear = parseInt($('#inputted-birth-year').val());
+    var earthAge = new _scripts.Age(earthMonth, earthDay, earthYear);
+
+    $('.user-ages').append("<ul> your birthday" + earthMonth + "</ul>");
+    // $('.user-ages').append("<p>Your Date of Birth is: " + earthAge.month + " " + earthAge.day + "," + earthAge.year + "</p>");
   });
 });
 
-},{"./../js/-interface.js":1}],2:[function(require,module,exports){
-'use strict';
-
-var _interface = require('./../js/-interface.js');
-
-$(document).ready(function () {
-  $('#inputted-dob').submit(function (event) {
-    event.preventDefault();
-    var earthMonth = $('#inputted-birth-month').val();
-    var earthDay = $('#inputted-birth-day').val();
-    var earthYear = $('#inputted-birth-year').val();
-    var Human = new Human();
-  });
-});
-
-},{"./../js/-interface.js":1}]},{},[2]);
+},{"./../js/scripts.js":1}]},{},[2]);

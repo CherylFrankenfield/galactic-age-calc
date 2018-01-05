@@ -1,8 +1,0 @@
-html {
-  box-sizing: border-box;
-  background: url('../img/stars.jpg') center/cover no-repeat;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
-}

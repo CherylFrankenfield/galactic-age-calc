@@ -19,6 +19,8 @@ const lib = require('bower-files')({
   }
 });
 const browserSync = require('browser-sync').create();
+const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
 const chromeLauncher = require('chrome-launcher');
 const babelify = require('babelify');
 
@@ -69,11 +71,6 @@ gulp.task('clean', function(){
   return del(['dist', 'tmp']);
 });
 
-gulp.task('cssDist', ['clean'], function(){
-  gulp.src('css/main.css')
-      .pipe(gulp.dest('dist/css'));
-});
-
 gulp.task('dist', ['clean'], function(){
   if (distProduction) {
     gulp.start('minifyScripts');
@@ -96,7 +93,7 @@ gulp.task('serve', ['dist'], function() {
   gulp.watch(['js/*.js'], ['jsDist']);
   gulp.watch(['bower.json'], ['bowerDist']);
   gulp.watch(['*.html'], ['htmlDist']);
-  gulp.watch(['*.css'], ['cssDist']);
+  gulp.watch(['scss/*.scss'], ['cssDist']);
 });
 
 gulp.task('jsDist', ['jsBrowserify', 'jshint'], function(){
@@ -111,8 +108,11 @@ gulp.task('htmlDist', ['bower'], function(){
   browserSync.reload();
 });
 
-gulp.task('cssDist', function() {
-  gulp.src(['css/*.css'])
-  .pipe(concat('vendor.css'))
+gulp.task('cssDist', ['bower'], function(){
+  return gulp.src('scss/*.scss')
+  .pipe(sourcemaps.init())
+  .pipe(sass())
+  .pipe(sourcemaps.write())
   .pipe(gulp.dest('./dist/css'))
+  .pipe(browserSync.stream());
 });
