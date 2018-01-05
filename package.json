@@ -4,12 +4,13 @@
   "description": "Calculate your age and life expectancy in the galaxy",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine"
   },
   "author": "Cheryl Frankenfield",
   "license": "MIT ",
   "devDependencies": {
     "bower-files": "^4.0.0",
+    "browser-sync": "^2.23.3",
     "browserify": "^15.0.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
@@ -17,7 +18,9 @@
     "gulp-jshint": "^2.1.0",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
+    "jasmine": "^2.8.0",
     "jshint": "^2.9.5",
-    "vinyl-source-stream": "^2.0.0"
+    "vinyl-source-stream": "^2.0.0",
+    "watchify": "^3.9.0"
   }
 }

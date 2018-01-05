@@ -6,6 +6,7 @@ const uglify = require('gulp-uglify');
 const jshint = require('gulp-jshint');
 const utilities = require('gulp-util');
 const del = require('del');
+const browserSync = require('browser-sync').create();
 const distProduction = utilities.env.production;
 const lib = require('bower-files')({
   "overrides":{
@@ -70,4 +71,25 @@ gulp.task('dist', ['clean'], function(){
     gulp.start('jsBrowserify');
   }
   gulp.start('bower');
+});
+
+
+gulp.task('serve', function() {
+  browserSync.init({
+    server: {
+      baseDir: "./",
+      index: "index.html"
+    }
+  });
+
+  gulp.watch(['js/*.js'], ['jsDist']);
+  gulp.watch(['bower.json'], ['bowerDist']);
+});
+
+gulp.task('jsDist', ['jsBrowserify', 'jshint'], function(){
+  browserSync.reload();
+});
+
+gulp.task('bowerDist', ['bower'], function(){
+  browserSync.reload();
 });
