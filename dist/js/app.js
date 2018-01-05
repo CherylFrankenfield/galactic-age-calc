@@ -7,6 +7,9 @@ Object.defineProperty(exports, "__esModule", {
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+//Global variables//
+
+
 //function to calculate age //
 var Birthdate = exports.Birthdate = function Birthdate(month, day, year) {
   _classCallCheck(this, Birthdate);
@@ -18,6 +21,16 @@ var Birthdate = exports.Birthdate = function Birthdate(month, day, year) {
 
 //function to calculate current time//
 
+
+var Moment = exports.Moment = function Moment(year, month, day, hour, minute, second) {
+  _classCallCheck(this, Moment);
+
+  this.year = year;
+  this.month = month;
+  this.hour = hour;
+  this.minute = minute;
+  this.second = second;
+};
 
 var Human = exports.Human = function Human(ageYears, ageSeconds, lifeExpectancy, gender, dateOfBirth) {
   _classCallCheck(this, Human);
@@ -40,11 +53,16 @@ $(document).ready(function () {
     var earthMonth = parseInt($('#inputted-birth-month').val());
     var earthDay = parseInt($('#inputted-birth-day').val());
     var earthYear = parseInt($('#inputted-birth-year').val());
-    alert("hello");
-    var birthdate = new _birthdate.Birthdate(earthMonth, earthDay, earthYear);
+    var newBirthdate = new _birthdate.Birthdate(earthMonth, earthDay, earthYear);
+    var newCurrentTime = new Moment(y, m, d, h, m, s);
+    var currentTime = moment();
 
-    $('.earth-birthday').append("<div> Your Earth birthday is: " + earthMonth + "/" + earthDay + "/" + earthYear + "</div>");
-    // $('.user-ages').append("<p>Your Date of Birth is: " + earthAge.month + " " + earthAge.day + "," + earthAge.year + "</p>");
+    $('.earth-birthday').append("<div> Your Earth birthday is: " + newBirthdate.month + "/" + newBirthdate.day + "/" + newBirthdate.year + "</div>");
+
+    // alert(currentTime);
+    $('.current-timestamp').append("<div> The current day and time is: " + currentTime + "</div>");
+
+    // $('.earth-age').append("<div> Your Earth age is: " + "</div>");
   });
 });
 

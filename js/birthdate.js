@@ -1,3 +1,5 @@
+//Global variables//
+
 
 //function to calculate age //
 export class Birthdate {
@@ -9,6 +11,15 @@ export class Birthdate {
 }
 
 //function to calculate current time//
+export class Moment {
+  constructor(year, month, day, hour, minute, second) {
+    this.year = year;
+    this.month = month;
+    this.hour = hour;
+    this.minute = minute;
+    this.second = second;
+  }
+}
 
 
 export class Human {

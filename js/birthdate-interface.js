@@ -6,12 +6,16 @@ $(document).ready(function() {
     let earthMonth = parseInt($('#inputted-birth-month').val());
     let earthDay = parseInt($('#inputted-birth-day').val());
     let earthYear = parseInt($('#inputted-birth-year').val());
-    alert("hello");
-    let birthdate = new Birthdate(earthMonth, earthDay, earthYear);
+    let newBirthdate = new Birthdate(earthMonth, earthDay, earthYear);
+    let newCurrentTime = new Moment(y,m,d,h,m,s);
+    let currentTime = moment();
 
-    $('.earth-birthday').append("<div> Your Earth birthday is: " + earthMonth + "/" + earthDay + "/" + earthYear + "</div>");
-    // $('.user-ages').append("<p>Your Date of Birth is: " + earthAge.month + " " + earthAge.day + "," + earthAge.year + "</p>");
+    $('.earth-birthday').append("<div> Your Earth birthday is: " + newBirthdate.month + "/" + newBirthdate.day + "/" + newBirthdate.year + "</div>");
 
+    // alert(currentTime);
+    $('.current-timestamp').append("<div> The current day and time is: " + currentTime + "</div>");
+
+    // $('.earth-age').append("<div> Your Earth age is: " + "</div>");
   });
 
 
