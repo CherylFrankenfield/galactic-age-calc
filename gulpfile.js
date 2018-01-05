@@ -93,7 +93,7 @@ gulp.task('serve', ['dist'], function() {
   gulp.watch(['js/*.js'], ['jsDist']);
   gulp.watch(['bower.json'], ['bowerDist']);
   gulp.watch(['*.html'], ['htmlDist']);
-  gulp.watch(['scss/*.scss'], ['cssDist']);
+  gulp.watch(['sass/*.scss'], ['cssDist']);
 });
 
 gulp.task('jsDist', ['jsBrowserify', 'jshint'], function(){
@@ -109,7 +109,7 @@ gulp.task('htmlDist', ['bower'], function(){
 });
 
 gulp.task('cssDist', ['bower'], function(){
-  return gulp.src('scss/*.scss')
+  return gulp.src('sass/*.scss')
   .pipe(sourcemaps.init())
   .pipe(sass())
   .pipe(sourcemaps.write())

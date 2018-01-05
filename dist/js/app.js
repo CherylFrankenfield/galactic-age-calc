@@ -32,7 +32,7 @@ var Human = exports.Human = function Human(ageYears, ageSeconds, lifeExpectancy,
 },{}],2:[function(require,module,exports){
 'use strict';
 
-var _scripts = require('./../js/scripts.js');
+var _age = require('./../js/age.js');
 
 $(document).ready(function () {
   $('#inputted-dob').submit(function (event) {
@@ -40,11 +40,12 @@ $(document).ready(function () {
     var earthMonth = parseInt($('#inputted-birth-month').val());
     var earthDay = parseInt($('#inputted-birth-day').val());
     var earthYear = parseInt($('#inputted-birth-year').val());
-    var earthAge = new _scripts.Age(earthMonth, earthDay, earthYear);
+    alert("hello");
+    var earthAge = new _age.Age(earthMonth, earthDay, earthYear);
 
     $('.user-ages').append("<ul> your birthday" + earthMonth + "</ul>");
     // $('.user-ages').append("<p>Your Date of Birth is: " + earthAge.month + " " + earthAge.day + "," + earthAge.year + "</p>");
   });
 });
 
-},{"./../js/scripts.js":1}]},{},[2]);
+},{"./../js/age.js":1}]},{},[2]);
