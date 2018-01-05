@@ -7,6 +7,7 @@ const jshint = require('gulp-jshint');
 const utilities = require('gulp-util');
 const del = require('del');
 const browserSync = require('browser-sync').create();
+const babelify = require('babelify');
 const distProduction = utilities.env.production;
 const lib = require('bower-files')({
   "overrides":{
@@ -33,10 +34,13 @@ gulp.task('concatInterface', function() {
 });
 
 gulp.task('jsBrowserify', ['concatInterface'], function() {
-  return browserify({ entries: ['./tmp/allConcat.js'] })
+  return browserify({ entries: ['./tmp/allConcat.js']})
+    .transform(babelify.configure({
+      presets: ["es2015"]
+    }))
     .bundle()
     .pipe(source('app.js'))
-    .pipe(gulp.dest('./dist/js'));
+    .pipe(gulp.dest('./dist/js'))
 });
 
 gulp.task('minifyScripts', ['jsBrowserify'], function(){
@@ -92,4 +96,10 @@ gulp.task('jsDist', ['jsBrowserify', 'jshint'], function(){
 
 gulp.task('bowerDist', ['bower'], function(){
   browserSync.reload();
+});
+
+gulp.task('cssDist', function() {
+  gulp.src(['css/*.css'])
+  .pipe(concat('vendor.css'))
+  .pipe(gulp.dest('./dist/css'))
 });
