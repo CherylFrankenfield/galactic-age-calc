@@ -1,0 +1,15 @@
+{
+  "name": "galactic-age-calc",
+  "version": "1.0.0",
+  "description": "Calculate your age and life expectancy in the galaxy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cheryl Frankenfield",
+  "license": "MIT ",
+  "devDependencies": {
+    "browserify": "^15.0.0",
+    "gulp": "^3.9.1"
+  }
+}
