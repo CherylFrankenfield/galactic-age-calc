@@ -19,6 +19,7 @@ const lib = require('bower-files')({
   }
 });
 const browserSync = require('browser-sync').create();
+const chromeLauncher = require('chrome-launcher');
 const babelify = require('babelify');
 
 gulp.task('jshint', function(){
@@ -68,6 +69,11 @@ gulp.task('clean', function(){
   return del(['dist', 'tmp']);
 });
 
+gulp.task('cssDist', ['clean'], function(){
+  gulp.src('css/main.css')
+      .pipe(gulp.dest('dist/css'));
+});
+
 gulp.task('dist', ['clean'], function(){
   if (distProduction) {
     gulp.start('minifyScripts');
@@ -75,7 +81,7 @@ gulp.task('dist', ['clean'], function(){
     gulp.start('jsBrowserify');
   }
   gulp.start('bower');
-  gulp.start('cssBuild');
+  gulp.start('cssDist');
 });
 
 
@@ -90,6 +96,7 @@ gulp.task('serve', ['dist'], function() {
   gulp.watch(['js/*.js'], ['jsDist']);
   gulp.watch(['bower.json'], ['bowerDist']);
   gulp.watch(['*.html'], ['htmlDist']);
+  gulp.watch(['*.css'], ['cssDist']);
 });
 
 gulp.task('jsDist', ['jsBrowserify', 'jshint'], function(){

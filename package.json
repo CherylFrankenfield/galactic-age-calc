@@ -32,5 +32,8 @@
     "karma-jquery": "^0.2.2",
     "vinyl-source-stream": "^2.0.0",
     "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "chrome-launcher": "^0.10.0"
   }
 }
