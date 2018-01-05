@@ -7,13 +7,6 @@
     <link href="dist/css/main.css" rel="stylesheet" type="text/css">
     <script src="dist/js/vendor.min.js"></script>
     <script type="text/javascript" src="dist/js/app.js"></script>
-
-
-    <!-- <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <script src="bower_components/moment/min/moment.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="dist/js/app.js"></script> -->
     <title>Galactic Age Calculator</title>
   </head>
   <body>
@@ -22,7 +15,18 @@
         <h1>Find your Galactic Age!</h1>
       </div>
       <div class="main">
-
+        <div class="date-of-birth">
+          <h4>Enter Date of Birth</h4>
+          <form id="inputted-dob">
+            <label for="">Month</label>
+            <input id="inputted-birth-month" required type="text" placeholder="Month">
+            <label for="">Day</label>
+            <input id="inputted-birth-day" required type="text" placeholder="Day">
+            <label for="">Year</label>
+            <input id="inputted-birth-year" required type="text" placeholder="Year">
+            <button id="dob-button" class="btn btn-dark" type="button" name="button">Submit</button>
+          </form>
+        </div>
       </div>
     </div>
   </body>
