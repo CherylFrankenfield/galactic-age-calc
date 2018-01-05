@@ -1,12 +1,12 @@
 .container {
   // background: url("../img/stars.jpg") center/cover no-repeat;
-}
-
-.main {
-  h1 {
-    font-size: 3em;
+  background-color: #FBFFB9;
+  .main {
+    h1 {
+      font-size: 3em;
+    }
+    p {
+      font-family: sans-serif;
+    }
   }
-  p {
-    font-family: sans-serif;
-  }
-}
+}  

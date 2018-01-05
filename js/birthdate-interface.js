@@ -1,4 +1,4 @@
-import { Age } from './../js/age.js';
+import { Birthdate } from './../js/birthdate.js';
 
 $(document).ready(function() {
   $('#inputted-dob').submit(function(event) {
@@ -7,9 +7,9 @@ $(document).ready(function() {
     let earthDay = parseInt($('#inputted-birth-day').val());
     let earthYear = parseInt($('#inputted-birth-year').val());
     alert("hello");
-    let earthAge = new Age(earthMonth, earthDay, earthYear);
+    let birthdate = new Birthdate(earthMonth, earthDay, earthYear);
 
-    $('.user-ages').append("<ul> your birthday" + earthMonth + "</ul>");
+    $('.earth-birthday').append("<div> Your Earth birthday is: " + earthMonth + "/" + earthDay + "/" + earthYear + "</div>");
     // $('.user-ages').append("<p>Your Date of Birth is: " + earthAge.month + " " + earthAge.day + "," + earthAge.year + "</p>");
 
   });

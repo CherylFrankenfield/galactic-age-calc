@@ -8,8 +8,8 @@ Object.defineProperty(exports, "__esModule", {
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 //function to calculate age //
-var Age = exports.Age = function Age(month, day, year) {
-  _classCallCheck(this, Age);
+var Birthdate = exports.Birthdate = function Birthdate(month, day, year) {
+  _classCallCheck(this, Birthdate);
 
   this.month = month;
   this.day = day;
@@ -32,7 +32,7 @@ var Human = exports.Human = function Human(ageYears, ageSeconds, lifeExpectancy,
 },{}],2:[function(require,module,exports){
 'use strict';
 
-var _age = require('./../js/age.js');
+var _birthdate = require('./../js/birthdate.js');
 
 $(document).ready(function () {
   $('#inputted-dob').submit(function (event) {
@@ -41,11 +41,11 @@ $(document).ready(function () {
     var earthDay = parseInt($('#inputted-birth-day').val());
     var earthYear = parseInt($('#inputted-birth-year').val());
     alert("hello");
-    var earthAge = new _age.Age(earthMonth, earthDay, earthYear);
+    var birthdate = new _birthdate.Birthdate(earthMonth, earthDay, earthYear);
 
-    $('.user-ages').append("<ul> your birthday" + earthMonth + "</ul>");
+    $('.earth-birthday').append("<div> Your Earth birthday is: " + earthMonth + "/" + earthDay + "/" + earthYear + "</div>");
     // $('.user-ages').append("<p>Your Date of Birth is: " + earthAge.month + " " + earthAge.day + "," + earthAge.year + "</p>");
   });
 });
 
-},{"./../js/age.js":1}]},{},[2]);
+},{"./../js/birthdate.js":1}]},{},[2]);

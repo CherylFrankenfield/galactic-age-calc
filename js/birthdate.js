@@ -1,6 +1,6 @@
 
 //function to calculate age //
-export class Age {
+export class Birthdate {
   constructor(month,day,year) {
     this.month = month;
     this.day = day;

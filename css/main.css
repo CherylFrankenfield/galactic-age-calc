@@ -51,9 +51,11 @@ html {
 *, *::before, *::after {
   box-sizing: inherit; }
 
-.main h1 {
-  font-size: 3em; }
-.main p {
-  font-family: sans-serif; }
+.container {
+  background-color: #FBFFB9; }
+  .container .main h1 {
+    font-size: 3em; }
+  .container .main p {
+    font-family: sans-serif; }
 
 /*# sourceMappingURL=main.css.map */
