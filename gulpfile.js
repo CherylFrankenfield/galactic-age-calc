@@ -1,13 +1,11 @@
 const gulp = require('gulp');
-const concat = require('gulp-concat');
 const browserify = require('browserify');
 const source = require('vinyl-source-stream');
+const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
-const jshint = require('gulp-jshint');
 const utilities = require('gulp-util');
+const jshint = require('gulp-jshint');
 const del = require('del');
-const browserSync = require('browser-sync').create();
-const babelify = require('babelify');
 const distProduction = utilities.env.production;
 const lib = require('bower-files')({
   "overrides":{
@@ -20,6 +18,8 @@ const lib = require('bower-files')({
     }
   }
 });
+const browserSync = require('browser-sync').create();
+const babelify = require('babelify');
 
 gulp.task('jshint', function(){
   return gulp.src(['js/*.js'])
@@ -49,14 +49,14 @@ gulp.task('minifyScripts', ['jsBrowserify'], function(){
   .pipe(gulp.dest("./dist/js"));
 });
 
-gulp.task('bowerJS', function () {
+gulp.task('bowerJS', function() {
   return gulp.src(lib.ext('js').files)
     .pipe(concat('vendor.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('./dist/js'));
 });
 
-gulp.task('bowerCSS', function () {
+gulp.task('bowerCSS', function() {
   return gulp.src(lib.ext('css').files)
     .pipe(concat('vendor.css'))
     .pipe(gulp.dest('./dist/css'));
@@ -75,10 +75,11 @@ gulp.task('dist', ['clean'], function(){
     gulp.start('jsBrowserify');
   }
   gulp.start('bower');
+  gulp.start('cssBuild');
 });
 
 
-gulp.task('serve', function() {
+gulp.task('serve', ['dist'], function() {
   browserSync.init({
     server: {
       baseDir: "./",
@@ -88,6 +89,7 @@ gulp.task('serve', function() {
 
   gulp.watch(['js/*.js'], ['jsDist']);
   gulp.watch(['bower.json'], ['bowerDist']);
+  gulp.watch(['*.html'], ['htmlDist']);
 });
 
 gulp.task('jsDist', ['jsBrowserify', 'jshint'], function(){
@@ -95,6 +97,10 @@ gulp.task('jsDist', ['jsBrowserify', 'jshint'], function(){
 });
 
 gulp.task('bowerDist', ['bower'], function(){
+  browserSync.reload();
+});
+
+gulp.task('htmlDist', ['bower'], function(){
   browserSync.reload();
 });
 
