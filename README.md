@@ -11,18 +11,15 @@ _Create an app to determine user's age based on planets' solar years. Additional
 ## Setup/Installation Requirements
 
 * Navigate to your terminal.
-* Perform Git clone command on the repo [here.]()
+* Perform Git clone command on the repo [here.](https://github.com/CherylFrankenfield/galactic-age-calc.git)
 * Perform Git atom . command to open all files in repo.
 * View index.html in browser.
-* No other setup or install necessary.
-* Or [click here]() to view in browser now.
 
 ## Planning
 
 1. Configuration/dependencies
-  * This should include ALL dependencies.
-  * It should also include WHERE they are defined and used in the project
-  * It could include a short description of what each does for you
+  * This app uses Bootstrap and jQuery.
+  * This app will use momentjs and time functionality.
 
 2. Specs
 _The app will take a person's age in years and convert into seconds._
@@ -58,18 +55,17 @@ _The app will return life expectancy on Earth and take additional user input bas
 * _Output: App returns user's life expectancy in years (number)._
 
 3. Integration
-  * User story for:
-  * Display user input (either w/ blank numbers fields for day,month,year or dropdown selection) a submit button, and reset button.
-  * Integrate feature that takes life expectancy input from user, including: gender dropdown, country dropdown, and determined current age.
+  * Display user input (w/ blank numbers fields for day,month,year) a submit button, and reset button.
+  * Integrate feature that takes life expectancy input from user, including: gender dropdown, country dropdown, and earlier determined current age.
   * Future user stories may include more features to determine life expectancy based on health, exercise, weight, and if person reaches X age (65), they are more likely to live til X age (85).
 
 4. UX/UI
-    * Include and modify bootstrap/materialize/Sass etc.
-    * Develop custom style
+    * Include and modify Bootstrap/Sass etc.
+    * Develop custom style, Display planet cards with info. on them.
 
 ## Known Bugs
 
-_Text._
+_Currently unable to use moment() as described in documentation and w/ ES6. Displays formatted moment() function in alert but not in appended div class. Bootstrap loads originally with browersync and then after a second it disappears and no style is displayed. Spent some time trying to figure out communication issue and unable at this time._
 
 ## Support and contact details
 

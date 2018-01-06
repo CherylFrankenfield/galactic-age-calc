@@ -7,7 +7,7 @@ $(document).ready(function() {
     let earthDay = parseInt($('#inputted-birth-day').val());
     let earthYear = parseInt($('#inputted-birth-year').val());
     let newBirthdate = new Birthdate(earthMonth, earthDay, earthYear);
-    let newCurrentTime = new Moment(y,m,d,h,m,s);
+    // let newCurrentTime = new Moment(y,m,d,h,m,s);
     let currentTime = moment();
 
     $('.earth-birthday').append("<div> Your Earth birthday is: " + newBirthdate.month + "/" + newBirthdate.day + "/" + newBirthdate.year + "</div>");

@@ -8,9 +8,14 @@ Object.defineProperty(exports, "__esModule", {
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 //Global variables//
-
+var earthAge = 0;
+var marsAge = 0;
+var venusAge = 0;
+var jupiterAge = 0;
+var mercuryAge = 0;
 
 //function to calculate age //
+
 var Birthdate = exports.Birthdate = function Birthdate(month, day, year) {
   _classCallCheck(this, Birthdate);
 
@@ -20,17 +25,46 @@ var Birthdate = exports.Birthdate = function Birthdate(month, day, year) {
 };
 
 //function to calculate current time//
+// export class Moment {
+//   constructor(year, month, day, hour, minute, second) {
+//     this.year = year;
+//     this.month = month;
+//     this.hour = hour;
+//     this.minute = minute;
+//     this.second = second;
+//   }
+// }
+
+//function to calculate Earth Age//
 
 
-var Moment = exports.Moment = function Moment(year, month, day, hour, minute, second) {
-  _classCallCheck(this, Moment);
+//function to calculate Mars Age //
 
-  this.year = year;
-  this.month = month;
-  this.hour = hour;
-  this.minute = minute;
-  this.second = second;
-};
+
+function calculateMarsAge(earthAge) {
+  var marsAge = earthAge *= 1.88;
+  return marsAge;
+}
+
+//function to calculate Jupiter Age //
+function calculateJupiterAge(earthAge) {
+  var jupiterAge = earthAge *= 11.86;
+  return jupiterAge;
+}
+
+//function to calculate Venus Age //
+function calculateVenusAge(earthAge) {
+  var venusAge = earthAge /= .62;
+  return venusAge;
+}
+
+//function to calculate Mercury Age //
+function calculateMercuryAge(earthAge) {
+  var mercuryAge = earthAge /= .24;
+  return mercuryAge;
+}
+
+//Add life expectancy functions and additional features //
 
 var Human = exports.Human = function Human(ageYears, ageSeconds, lifeExpectancy, gender, dateOfBirth) {
   _classCallCheck(this, Human);
@@ -54,7 +88,7 @@ $(document).ready(function () {
     var earthDay = parseInt($('#inputted-birth-day').val());
     var earthYear = parseInt($('#inputted-birth-year').val());
     var newBirthdate = new _birthdate.Birthdate(earthMonth, earthDay, earthYear);
-    var newCurrentTime = new Moment(y, m, d, h, m, s);
+    // let newCurrentTime = new Moment(y,m,d,h,m,s);
     var currentTime = moment();
 
     $('.earth-birthday').append("<div> Your Earth birthday is: " + newBirthdate.month + "/" + newBirthdate.day + "/" + newBirthdate.year + "</div>");
