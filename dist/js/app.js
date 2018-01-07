@@ -40,13 +40,13 @@ var Birthdate = exports.Birthdate = function () {
   }, {
     key: "calculateMarsAge",
     value: function calculateMarsAge(ageInEarthYears) {
-      var marsAge = ageInEarthYears *= 1.88;
+      var marsAge = ageInEarthYears /= 1.88;
       return marsAge;
     }
   }, {
     key: "calculateJupiterAge",
     value: function calculateJupiterAge(ageInEarthYears) {
-      var jupiterAge = ageInEarthYears *= 11.86;
+      var jupiterAge = ageInEarthYears /= 11.86;
       return jupiterAge;
     }
   }, {
@@ -55,20 +55,19 @@ var Birthdate = exports.Birthdate = function () {
       var venusAge = ageInEarthYears /= 0.62;
       return venusAge;
     }
+  }, {
+    key: "calculateMercuryAge",
+    value: function calculateMercuryAge(ageInEarthYears) {
+      var mercuryAge = ageInEarthYears /= 0.24;
+      return mercuryAge;
+    }
   }]);
 
   return Birthdate;
 }();
 
-//function to calculate Mercury Age //
-
-
-function calculateMercuryAge(earthAge) {
-  var mercuryAge = earthAge *= 0.24;
-  return mercuryAge;
-}
-
 //Add life expectancy functions and additional features //
+
 
 var Human = exports.Human = function Human(ageYears, ageSeconds, lifeExpectancy, gender, dateOfBirth) {
   _classCallCheck(this, Human);
@@ -110,6 +109,8 @@ $(document).ready(function () {
     $('.jupiter-age').append("<div> Your Jupiter age is: " + newBirthdate.calculateJupiterAge(newBirthdate.ageCalculation(currentYear, newBirthdate.year)) + "</div>");
 
     $('.venus-age').append("<div> Your Venus age is: " + newBirthdate.calculateVenusAge(newBirthdate.ageCalculation(currentYear, newBirthdate.year)) + "</div>");
+
+    $('.mercury-age').append("<div> Your Mercury age is: " + newBirthdate.calculateMercuryAge(newBirthdate.ageCalculation(currentYear, newBirthdate.year)) + "</div>");
   });
 });
 

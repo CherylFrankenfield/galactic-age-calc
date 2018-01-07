@@ -26,6 +26,8 @@ $(document).ready(function() {
 
     $('.venus-age').append("<div> Your Venus age is: " + newBirthdate.calculateVenusAge(newBirthdate.ageCalculation(currentYear, newBirthdate.year)) + "</div>");
 
+    $('.mercury-age').append("<div> Your Mercury age is: " + newBirthdate.calculateMercuryAge(newBirthdate.ageCalculation(currentYear, newBirthdate.year)) + "</div>");
+
 
   });
 });

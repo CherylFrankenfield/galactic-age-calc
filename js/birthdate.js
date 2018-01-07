@@ -20,25 +20,23 @@ export class Birthdate {
     return seconds;
   }
   calculateMarsAge(ageInEarthYears) {
-    let marsAge = (ageInEarthYears *= 1.88);
+    let marsAge = (ageInEarthYears /= 1.88);
     return marsAge;
   }
   calculateJupiterAge(ageInEarthYears) {
-    let jupiterAge = (ageInEarthYears *= 11.86);
+    let jupiterAge = (ageInEarthYears /= 11.86);
     return jupiterAge;
   }
   calculateVenusAge(ageInEarthYears) {
     let venusAge = (ageInEarthYears /= 0.62);
     return venusAge;
   }
+  calculateMercuryAge(ageInEarthYears) {
+    let mercuryAge = (ageInEarthYears /= 0.24);
+    return mercuryAge;
+  }
 }
 
-
-//function to calculate Mercury Age //
-function calculateMercuryAge(earthAge) {
-  let mercuryAge = (earthAge *= 0.24);
-  return mercuryAge;
-}
 
 //Add life expectancy functions and additional features //
 export class Human {
