@@ -5,28 +5,22 @@ let venusAge = 0;
 let jupiterAge = 0;
 let mercuryAge = 0;
 
-//function to calculate age //
+//function to store user birthdate //
 export class Birthdate {
   constructor(month,day,year) {
     this.month = month;
     this.day = day;
     this.year = year;
+    this.ageCalculation();
+  }
+  ageCalculation(currentYear, year) {
+    return currentYear -= year;
   }
 }
 
-//function to calculate current time//
-// export class Moment {
-//   constructor(year, month, day, hour, minute, second) {
-//     this.year = year;
-//     this.month = month;
-//     this.hour = hour;
-//     this.minute = minute;
-//     this.second = second;
-//   }
-// }
+//take date format and convert to seconds
 
-//function to calculate Earth Age//
-
+//function to calculate Earth Age in Seconds//
 
 //function to calculate Mars Age //
 function calculateMarsAge(earthAge) {
