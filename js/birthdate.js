@@ -23,19 +23,19 @@ export class Birthdate {
     let marsAge = (ageInEarthYears *= 1.88);
     return marsAge;
   }
+  calculateJupiterAge(ageInEarthYears) {
+    let jupiterAge = (ageInEarthYears *= 11.86);
+    return jupiterAge;
+  }
 }
 
-//function to calculate Mars Age //
-function calculateMarsAge(earthAge) {
-  let marsAge = (earthAge *= 1.88);
-  return marsAge;
-}
 
-//function to calculate Jupiter Age //
-function calculateJupiterAge(earthAge) {
-  let jupiterAge = (earthAge *= 11.86);
-  return jupiterAge;
-}
+//
+// //function to calculate Jupiter Age //
+// function calculateJupiterAge(earthAge) {
+//   let jupiterAge = (earthAge *= 11.86);
+//   return jupiterAge;
+// }
 
 //function to calculate Venus Age //
 function calculateVenusAge(earthAge) {
