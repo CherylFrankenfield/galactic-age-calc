@@ -37,6 +37,13 @@ export class Birthdate {
   }
 }
 
+// function lifeExpectancy(ageInEarthYears) {
+//   if (ageInEarthYears => 65.0) {
+//     return "Congrats, You will live another 15 years.";
+//   } else if () {
+//
+//   }
+// }
 
 //Add life expectancy functions and additional features //
 export class Human {

@@ -20,13 +20,13 @@ $(document).ready(function() {
 
     $('.age-in-seconds').append("<div> Your age in seconds is: " + newBirthdate.ageInSeconds(newBirthdate.ageCalculation(currentYear,newBirthdate.year)) + "</div>");
 
-    $('.mars-age').append("<div> Your Mars age is: " + newBirthdate.calculateMarsAge(newBirthdate.ageCalculation(currentYear, newBirthdate.year)) + "</div>");
+    $('.mars-age').append("<div> Your Mars age in years is: " + newBirthdate.calculateMarsAge(newBirthdate.ageCalculation(currentYear, newBirthdate.year)) + "</div>");
 
-    $('.jupiter-age').append("<div> Your Jupiter age is: " + newBirthdate.calculateJupiterAge(newBirthdate.ageCalculation(currentYear, newBirthdate.year)) + "</div>");
+    $('.jupiter-age').append("<div> Your Jupiter age in years is: " + newBirthdate.calculateJupiterAge(newBirthdate.ageCalculation(currentYear, newBirthdate.year)) + "</div>");
 
-    $('.venus-age').append("<div> Your Venus age is: " + newBirthdate.calculateVenusAge(newBirthdate.ageCalculation(currentYear, newBirthdate.year)) + "</div>");
+    $('.venus-age').append("<div> Your Venus age in years is: " + newBirthdate.calculateVenusAge(newBirthdate.ageCalculation(currentYear, newBirthdate.year)) + "</div>");
 
-    $('.mercury-age').append("<div> Your Mercury age is: " + newBirthdate.calculateMercuryAge(newBirthdate.ageCalculation(currentYear, newBirthdate.year)) + "</div>");
+    $('.mercury-age').append("<div> Your Mercury age in years is: " + newBirthdate.calculateMercuryAge(newBirthdate.ageCalculation(currentYear, newBirthdate.year)) + "</div>");
 
 
   });
