@@ -12,12 +12,16 @@ export class Birthdate {
     this.ageInSeconds();
   }
   ageCalculation(currentYear, year) {
-    let ageInYears = currentYear -= year;
-    return ageInYears;
+    let ageInEarthYears = currentYear -= year;
+    return ageInEarthYears;
   }
-  ageInSeconds(ageInYears) {
-    let seconds = ageInYears *= (365*24*60*60);
+  ageInSeconds(ageInEarthYears) {
+    let seconds = ageInEarthYears *= (365*24*60*60);
     return seconds;
+  }
+  calculateMarsAge(ageInEarthYears) {
+    let marsAge = (ageInEarthYears *= 1.88);
+    return marsAge;
   }
 }
 

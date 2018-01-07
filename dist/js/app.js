@@ -28,14 +28,20 @@ var Birthdate = exports.Birthdate = function () {
   _createClass(Birthdate, [{
     key: "ageCalculation",
     value: function ageCalculation(currentYear, year) {
-      var ageInYears = currentYear -= year;
-      return ageInYears;
+      var ageInEarthYears = currentYear -= year;
+      return ageInEarthYears;
     }
   }, {
     key: "ageInSeconds",
-    value: function ageInSeconds(ageInYears) {
-      var seconds = ageInYears *= 365 * 24 * 60 * 60;
+    value: function ageInSeconds(ageInEarthYears) {
+      var seconds = ageInEarthYears *= 365 * 24 * 60 * 60;
       return seconds;
+    }
+  }, {
+    key: "calculateMarsAge",
+    value: function calculateMarsAge(ageInEarthYears) {
+      var marsAge = ageInEarthYears *= 1.88;
+      return marsAge;
     }
   }]);
 
@@ -104,6 +110,8 @@ $(document).ready(function () {
     $('.earth-age').append("<div> Your Earth age is: " + newBirthdate.ageCalculation(currentYear, newBirthdate.year) + "</div>");
 
     $('.age-in-seconds').append("<div> Your age in seconds is: " + newBirthdate.ageInSeconds(newBirthdate.ageCalculation(currentYear, newBirthdate.year)) + "</div>");
+
+    $('.mars-age').append("<div> Your Mars age is: " + newBirthdate.calculateMarsAge(newBirthdate.ageCalculation(currentYear, newBirthdate.year)) + "</div>");
   });
 });
 
