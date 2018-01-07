@@ -27,25 +27,16 @@ export class Birthdate {
     let jupiterAge = (ageInEarthYears *= 11.86);
     return jupiterAge;
   }
+  calculateVenusAge(ageInEarthYears) {
+    let venusAge = (ageInEarthYears /= 0.62);
+    return venusAge;
+  }
 }
 
-
-//
-// //function to calculate Jupiter Age //
-// function calculateJupiterAge(earthAge) {
-//   let jupiterAge = (earthAge *= 11.86);
-//   return jupiterAge;
-// }
-
-//function to calculate Venus Age //
-function calculateVenusAge(earthAge) {
-  let venusAge = (earthAge /= 0.62);
-  return venusAge;
-}
 
 //function to calculate Mercury Age //
 function calculateMercuryAge(earthAge) {
-  let mercuryAge = (earthAge /= 0.24);
+  let mercuryAge = (earthAge *= 0.24);
   return mercuryAge;
 }
 

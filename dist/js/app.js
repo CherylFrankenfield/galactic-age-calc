@@ -49,29 +49,22 @@ var Birthdate = exports.Birthdate = function () {
       var jupiterAge = ageInEarthYears *= 11.86;
       return jupiterAge;
     }
+  }, {
+    key: "calculateVenusAge",
+    value: function calculateVenusAge(ageInEarthYears) {
+      var venusAge = ageInEarthYears /= 0.62;
+      return venusAge;
+    }
   }]);
 
   return Birthdate;
 }();
 
-//
-// //function to calculate Jupiter Age //
-// function calculateJupiterAge(earthAge) {
-//   let jupiterAge = (earthAge *= 11.86);
-//   return jupiterAge;
-// }
-
-//function to calculate Venus Age //
-
-
-function calculateVenusAge(earthAge) {
-  var venusAge = earthAge /= 0.62;
-  return venusAge;
-}
-
 //function to calculate Mercury Age //
+
+
 function calculateMercuryAge(earthAge) {
-  var mercuryAge = earthAge /= 0.24;
+  var mercuryAge = earthAge *= 0.24;
   return mercuryAge;
 }
 
@@ -115,6 +108,8 @@ $(document).ready(function () {
     $('.mars-age').append("<div> Your Mars age is: " + newBirthdate.calculateMarsAge(newBirthdate.ageCalculation(currentYear, newBirthdate.year)) + "</div>");
 
     $('.jupiter-age').append("<div> Your Jupiter age is: " + newBirthdate.calculateJupiterAge(newBirthdate.ageCalculation(currentYear, newBirthdate.year)) + "</div>");
+
+    $('.venus-age').append("<div> Your Venus age is: " + newBirthdate.calculateVenusAge(newBirthdate.ageCalculation(currentYear, newBirthdate.year)) + "</div>");
   });
 });
 
