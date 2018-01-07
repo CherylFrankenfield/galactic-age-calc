@@ -10,14 +10,8 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 //Global variables//
-var earthAge = 0;
-var marsAge = 0;
-var venusAge = 0;
-var jupiterAge = 0;
-var mercuryAge = 0;
 
 //function to store user birthdate //
-
 var Birthdate = exports.Birthdate = function () {
   function Birthdate(month, day, year) {
     _classCallCheck(this, Birthdate);
@@ -25,22 +19,28 @@ var Birthdate = exports.Birthdate = function () {
     this.month = month;
     this.day = day;
     this.year = year;
+    // this.seconds = seconds;
+    // this.ageInYears = ageInYears;
     this.ageCalculation();
+    this.ageInSeconds();
   }
 
   _createClass(Birthdate, [{
     key: "ageCalculation",
     value: function ageCalculation(currentYear, year) {
-      return currentYear -= year;
+      var ageInYears = currentYear -= year;
+      return ageInYears;
+    }
+  }, {
+    key: "ageInSeconds",
+    value: function ageInSeconds(ageInYears) {
+      var seconds = ageInYears *= 365 * 24 * 60 * 60;
+      return seconds;
     }
   }]);
 
   return Birthdate;
 }();
-
-//take date format and convert to seconds
-
-//function to calculate Earth Age in Seconds//
 
 //function to calculate Mars Age //
 
@@ -58,13 +58,13 @@ function calculateJupiterAge(earthAge) {
 
 //function to calculate Venus Age //
 function calculateVenusAge(earthAge) {
-  var venusAge = earthAge /= .62;
+  var venusAge = earthAge /= 0.62;
   return venusAge;
 }
 
 //function to calculate Mercury Age //
 function calculateMercuryAge(earthAge) {
-  var mercuryAge = earthAge /= .24;
+  var mercuryAge = earthAge /= 0.24;
   return mercuryAge;
 }
 
@@ -94,13 +94,16 @@ $(document).ready(function () {
     var newBirthdate = new _birthdate.Birthdate(earthMonth, earthDay, earthYear);
     var currentDate = moment().format('L');
     var currentYear = moment().format('YYYY');
+    // let earthAgeInYears = newBirthdate.ageCalculation(currentYear, newBirthdate.year);
+    // let earthSeconds = newBirthdate.ageInSeconds(newBirthdate.ageCalculation(currentYear,newBirthdate.year));
 
     $('.earth-birthday').append("<div> Your Earth birthday is: " + newBirthdate.month + "/" + newBirthdate.day + "/" + newBirthdate.year + "</div>");
 
     $('.current-timestamp').append("<div> The current day is: " + currentDate + "</div>");
-    // $('.age-in-seconds').append("<div> Your age in seconds is: " + ageInSeconds + "</div>");
 
     $('.earth-age').append("<div> Your Earth age is: " + newBirthdate.ageCalculation(currentYear, newBirthdate.year) + "</div>");
+
+    $('.age-in-seconds').append("<div> Your age in seconds is: " + newBirthdate.ageInSeconds(newBirthdate.ageCalculation(currentYear, newBirthdate.year)) + "</div>");
   });
 });
 

@@ -13,6 +13,10 @@ describe('Birthdate', function() {
     let birthdate = new Birthdate(5, 10, 1984);
     expect(birthdate.year).toEqual(1984);
   });
-
+  //not passing yet//
+  it('should display age of user in years', function() {
+    let birthdate = newBirthdate.ageCalculation(2018, 2000);
+    expect(newBirthdate.ageCalculation).toEqual(18);
+  });
 
 });

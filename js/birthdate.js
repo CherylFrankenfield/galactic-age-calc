@@ -1,9 +1,4 @@
 //Global variables//
-let earthAge = 0;
-let marsAge = 0;
-let venusAge = 0;
-let jupiterAge = 0;
-let mercuryAge = 0;
 
 //function to store user birthdate //
 export class Birthdate {
@@ -11,39 +6,43 @@ export class Birthdate {
     this.month = month;
     this.day = day;
     this.year = year;
+    // this.seconds = seconds;
+    // this.ageInYears = ageInYears;
     this.ageCalculation();
+    this.ageInSeconds();
   }
   ageCalculation(currentYear, year) {
-    return currentYear -= year;
+    let ageInYears = currentYear -= year;
+    return ageInYears;
+  }
+  ageInSeconds(ageInYears) {
+    let seconds = ageInYears *= (365*24*60*60);
+    return seconds;
   }
 }
-
-//take date format and convert to seconds
-
-//function to calculate Earth Age in Seconds//
 
 //function to calculate Mars Age //
 function calculateMarsAge(earthAge) {
   let marsAge = (earthAge *= 1.88);
-  return marsAge
+  return marsAge;
 }
 
 //function to calculate Jupiter Age //
 function calculateJupiterAge(earthAge) {
   let jupiterAge = (earthAge *= 11.86);
-  return jupiterAge
+  return jupiterAge;
 }
 
 //function to calculate Venus Age //
 function calculateVenusAge(earthAge) {
-  let venusAge = (earthAge /= .62);
-  return venusAge
+  let venusAge = (earthAge /= 0.62);
+  return venusAge;
 }
 
 //function to calculate Mercury Age //
 function calculateMercuryAge(earthAge) {
-  let mercuryAge = (earthAge /= .24);
-  return mercuryAge
+  let mercuryAge = (earthAge /= 0.24);
+  return mercuryAge;
 }
 
 //Add life expectancy functions and additional features //
