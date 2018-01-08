@@ -28,6 +28,5 @@ $(document).ready(function() {
 
     $('.mercury-age').append("<div> Your Mercury age in years is: " + newBirthdate.calculateMercuryAge(newBirthdate.ageCalculation(currentYear, newBirthdate.year)) + "</div>");
 
-
   });
 });
