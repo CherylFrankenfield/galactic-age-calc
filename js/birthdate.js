@@ -6,10 +6,12 @@ export class Birthdate {
     this.month = month;
     this.day = day;
     this.year = year;
-    // this.seconds = seconds;
-    // this.ageInYears = ageInYears;
     this.ageCalculation();
     this.ageInSeconds();
+    this.calculateMarsAge();
+    this.calculateJupiterAge();
+    this.calculateVenusAge();
+    this.calculateMercuryAge();
   }
   ageCalculation(currentYear, year) {
     let ageInEarthYears = currentYear -= year;
@@ -46,12 +48,3 @@ export class Birthdate {
 // }
 
 //Add life expectancy functions and additional features //
-export class Human {
-  constructor(ageYears, ageSeconds, lifeExpectancy, gender, dateOfBirth) {
-    this.ageYears = [];
-    this.ageSeconds = [];
-    this.lifeExpectancy = [];
-    this.gender = [];
-    this.dateOfBirth = [];
-  }
-}
